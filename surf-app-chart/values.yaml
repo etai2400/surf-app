@@ -1,5 +1,5 @@
 image:
-  repository: lioratari/surf-booking
+  repository: etai24/surf-app
   tag: "{{ .Chart.Version }}"
 service:
   type: LoadBalancer
