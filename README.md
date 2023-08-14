@@ -8,10 +8,10 @@ To begin, clone this repository by running:
 git clone https://gitlab.com/sela-1090/collaboration/applications/surf-booking/application.git
 ```
 
-build the docker file using the following command:
+build the image using the following command:
 ```
 cd application
-docker build -t lioratari/surf-booking:<version> .
+docker build -t etai24/surf-app:<version> .
 ```
 
 To run the unit-tests, use:
@@ -26,16 +26,17 @@ helm package surf-booking-chart
 
 ```
 docker login
-docker push lioratari/surf-booking:<version>
+docker push  etai24/surf-app:<version>
 helm push surf-booking-chart.tgz
 ```
 To deploy the application manually, run:
 ```
-helm install surf-app oci://registry-1.docker.io/lioratari/surf-booking-chart --version <desired version> --set postgresql.host=<DB IP> --set postgresql.database=<DB name> --set postgresql.password=<DB password> --set image.tag=<version>
+helm install surf-app oci://registry-1.docker.io/etai24/surf-app-chart --version <desired version> --set postgresql.host=<DB IP> --set postgresql.database=<DB name> --set postgresql.password=<DB password> --set
+image.tag=<version>
 ```
 Alternativly, you can create a custom values.yaml file as shows below and run:  
 ```
-surf-app oci://registry-1.docker.io/lioratari/surf-booking-chart --version <desired version> -f values.yaml
+surf-app oci://registry-1.docker.io/ etai24/surf-app --version <desired version> -f values.yaml
 ```
 values.yaml
 ```
