@@ -80,7 +80,7 @@ pipeline {
     post{
         failure{
             script {
-                echo "Job failed. Email was sent to lioratari12@gmail.com, yovelchen@gmail.com, etai2400@gmail.com"
+                echo "Job failed. Email was sent to etai2400@gmail.com"
             }
             mail to: "etai2400@gmail.com",
             subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
