@@ -27,7 +27,7 @@ helm package surf-booking-chart
 ```
 docker login
 docker push  etai24/surf-app:<version>
-helm push surf-booking-chart.tgz
+helm push etai24/surf-booking-chart.tgz
 ```
 To deploy the application manually, run:
 ```
