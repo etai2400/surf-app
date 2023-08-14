@@ -43,7 +43,7 @@ pipeline {
 
         stage('Build Helm Chart') {
             steps {
-                sh 'helm lint surf-booking-chart'
+                sh 'helm lint surf-app-chart'
                 sh 'helm package surf-app-chart --version '+env.BUILD_ID
             }
         }
