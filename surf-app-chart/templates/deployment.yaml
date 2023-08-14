@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: surf-booking
+  name: surf-app
   labels:
-    app: surf-booking
+    app: surf-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: surf-booking
+      app: surf-app
   template:
     metadata:
       labels:
