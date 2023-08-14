@@ -69,7 +69,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'surf-app-id', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USER')]) {
                         sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u ${DOCKERHUB_USER} --password-stdin"
-                        sh 'helm push surf-booking-chart-'+env.BUILD_ID+'.tgz oci://registry-1.docker.io/etai24'
+                        sh 'helm push surf-app-chart-'+env.BUILD_ID+'.tgz oci://registry-1.docker.io/etai24'
                     }
                 }
             }
